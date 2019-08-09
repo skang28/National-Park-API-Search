@@ -1,0 +1,1 @@
+This app uses National Park Service API to allow users to search parks by states. The search results will output the park's name, brief description, and website URL.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Find user repositories</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Search for Parks by state(s)</h1>
+        <form id="userSearch">
+            <label>Enter state(s) by state code.</label>
+            <input type="text" id="parkSearch" required>
+            <label>Enter max number of results.</label>
+            <input type="number" name="maxResults" id="max-results" value="10">
+            <input type="submit" value="Search">
+        </form>
+
+        <section class="hidden" id="results">
+            <h2>Results</h2>
+            <ul class="resultsList">
+
+            </ul>
+        </section>
+
+        <p id="errorMessage"></p>
+    </body>
+</html>
