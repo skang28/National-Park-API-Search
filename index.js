@@ -16,12 +16,12 @@ function getParks(stateCode, results) {
 function displayResults(responseJson) {
     console.log(responseJson);
     $('.resultsList').empty();
-    for (let i=0; i<responseJson.length; i++) {
+    for (let i=0; i<responseJson.data.length; i++) {
         $('.resultsList').append(`
-            <li><h3>Park Name: ${responseJson[i].fullName}</h3>
-            <p>States: ${responseJson[i].states}</p>
-            <p>Description: ${responseJson[i].description}</p>
-            <p> Website URL: ${responseJson[i].url}</p>
+            <li><h3>Park Name: ${responseJson.data[i].fullName}</h3>
+            <p>States: ${responseJson.data[i].states}</p>
+            <p>Description: ${responseJson.data[i].description}</p>
+            <p>Website URL: <a href="${responseJson.data[i].url}" target="_blank">${responseJson.data[i].url}</a></p>
             </li>`)};
 
     $('section').removeClass('hidden');
