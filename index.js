@@ -1,6 +1,5 @@
-function getParks(parks, results) {
-    const apiKey = 'SjvhrUMyYtndcXmAmaPBIl3DlaOl9ligOHOckRiU';
-    const stateCode = 'md'; 
+function getParks(stateCode, results) {
+    const apiKey = 'SjvhrUMyYtndcXmAmaPBIl3DlaOl9ligOHOckRiU'; 
     fetch(`https://developer.nps.gov/api/v1/parks?api_key=${apiKey}&stateCode=${stateCode}&limit=${results}`)
     .then(response => {
         if (response.ok) {
@@ -17,17 +16,13 @@ function getParks(parks, results) {
 function displayResults(responseJson) {
     console.log(responseJson);
     $('.resultsList').empty();
-
     for (let i=0; i<responseJson.length; i++) {
-        $('.resultsList').append(
-            `<li><h3>Park Name: </h3>
-            <p>States: </p>
-            <p>Description: </p>
-            <p> Website URL: </p>
-            </li>`
-        )
-        };
-    
+        $('.resultsList').append(`
+            <li><h3>Park Name: ${responseJson[i].fullName}</h3>
+            <p>States: ${responseJson[i].states}</p>
+            <p>Description: ${responseJson[i].description}</p>
+            <p> Website URL: ${responseJson[i].url}</p>
+            </li>`)};
 
     $('section').removeClass('hidden');
 }

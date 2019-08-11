@@ -11,18 +11,16 @@
     <body>
         <h1>Search for Parks by state(s)</h1>
         <form id="userSearch">
-            <label>Enter state(s) by state code.</label>
+            <label>Enter state(s) by state code (separate multiple states with a comma).</label>
             <input type="text" id="parkSearch" required>
             <label>Enter max number of results.</label>
             <input type="number" name="maxResults" id="max-results" value="10">
             <input type="submit" value="Search">
         </form>
 
-        <section class="hidden" id="results">
+        <section class="hidden">
             <h2>Results</h2>
-            <ul class="resultsList">
-
-            </ul>
+            <ul class="resultsList"></ul>
         </section>
 
         <p id="errorMessage"></p>
